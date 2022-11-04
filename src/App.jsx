@@ -1,30 +1,17 @@
-import TaskList from "./Tasklist";
-import Taskform from "./Taskform";
-import { useState, useEffect } from "react";
-import { data } from "./tasks";
+import TaskList from "./components/Tasklist";
+import Taskform from "./components/Taskform";
 
-function HolaMundo() {
-  const [tasks, setTasks] = useState([]);
 
-  useEffect(() => {
-    setTasks(data);
-  }, []);
 
-  function createTask(taskTitle) {
-    setTasks([...tasks, {
-      id: tasks.length,
-      title: taskTitle,
-      description:'new'
-    }]);
-  }
-  
-
+function MainApp() {
   return (
-    <div>
-      <Taskform createTask={createTask}/>
-      <TaskList tasks={tasks} />
-    </div>
+    <main className="bg-zinc-900 h-screen" >
+      <div className="container mx-auto p-10">
+      <Taskform />
+      <TaskList />
+      </div>
+    </main>
   );
 }
 
-export default HolaMundo;
+export default MainApp;

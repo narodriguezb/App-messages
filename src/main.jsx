@@ -1,10 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import HolaMundo from './App'
+import MainApp from './App'
 import './index.css'
-
+import { TaskContextProvider } from './context/TaskContext'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <HolaMundo />
+    <TaskContextProvider>
+      <MainApp />
+    </TaskContextProvider>
   </React.StrictMode>
 )
