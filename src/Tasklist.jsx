@@ -1,18 +1,14 @@
 import React from "react";
+import TaskCard from "./TaskCard";
 
-
-function TaskList({tasks}) {
-  
+function TaskList({ tasks }) {
   if (tasks.length === 0) {
     return <h1>No hay tareas aun</h1>;
   }
   return (
     <div>
       {tasks.map((task) => (
-        <div key={task.id}>
-            <h1>{task.title}</h1>
-            <p>{task.description}</p>
-        </div>
+        <TaskCard task={task} />
       ))}
     </div>
   );
